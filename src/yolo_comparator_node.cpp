@@ -1,6 +1,6 @@
 #include "yolo_comparator_node.hpp"
 
-YoloDetectorNode::YoloDetectorNode() : rclcpp::Node("yolo_detector")
+YoloDetectorNode::YoloDetectorNode() : rclcpp::Node("yolo_comparator")
 {
     std::string model1_path = "model/yolov5s.onnx";
     std::string model2_path = "model/yolo26s.onnx";
