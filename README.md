@@ -11,7 +11,7 @@ Runs on Ubuntu 24.2 (may be earlier ones as well).
 *  FoxGlove
 ... might require a few more packages for FoxGlove visu. Feel free to ask your coding agent! :)
 
-How to build:
+<h2> How to build </h2>
 
 ```bash
 ./build_node
@@ -25,6 +25,7 @@ How to stop:
 ./stop_node_bridge
 ```
 <h2> Comparison KPIs based on nuScenes mini data </h2>
+
 *  Localization accuracy or bounding box tightness: YOLO26 has a small edge
 *  Detection at far range: YOLOV5 has a small edge
 *  Detection stability: YOLOV5 has a small edge
