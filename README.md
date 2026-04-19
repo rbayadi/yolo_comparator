@@ -1,3 +1,5 @@
+<b> Compares detection performance of YOLOV5 and YOLO26 within a ROS2 node </b>
+
 <img width="1858" height="956" alt="image" src="https://github.com/user-attachments/assets/f7acd8f1-6db9-424e-840d-16aa75fa6f90" />
 
 
