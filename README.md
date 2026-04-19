@@ -6,6 +6,7 @@
 Runs on Ubuntu 24.2 (may be earlier ones as well). 
 
 <h2> Prerequisites </h2>
+
 *  ROS2 Kilted Kaiju
 *  ONNX run time: Download from https://github.com/microsoft/onnxruntime/releases/download/v1.24.4/onnxruntime-linux-x64-1.24.4.tgz. Extract and move the folder to /opt and rename to onnxruntime
 *  FoxGlove
