@@ -1,6 +1,6 @@
 #include "yolo_comparator_node.hpp"
 
-YoloDetectorNode::YoloDetectorNode() : rclcpp::Node("yolo_comparator")
+YoloComparatorNode::YoloComparatorNode() : rclcpp::Node("yolo_comparator")
 {
     std::string model1_path = "model/yolov5s.onnx";
     std::string model2_path = "model/yolo26s.onnx";
@@ -12,7 +12,7 @@ YoloDetectorNode::YoloDetectorNode() : rclcpp::Node("yolo_comparator")
     auto qos = rclcpp::SensorDataQoS();
     subscription_ = this->create_subscription<sensor_msgs::msg::CompressedImage>(
         "/CAM_FRONT/image_rect_compressed", qos,
-        std::bind(&YoloDetectorNode::image_callback, this, std::placeholders::_1)
+        std::bind(&YoloComparatorNode::image_callback, this, std::placeholders::_1)
     );
     annotations_publisher1_ = this->create_publisher<foxglove_msgs::msg::ImageAnnotations>(
     "/yolov5/image_annotations", qos);
@@ -27,7 +27,7 @@ YoloDetectorNode::YoloDetectorNode() : rclcpp::Node("yolo_comparator")
     "/yolo26_elapsed_time_milli", qos);
 }
 
-void YoloDetectorNode::image_callback(const sensor_msgs::msg::CompressedImage::SharedPtr msg)
+void YoloComparatorNode::image_callback(const sensor_msgs::msg::CompressedImage::SharedPtr msg)
 {
     cv::Mat frame = cv::imdecode(cv::Mat(msg->data), cv::IMREAD_COLOR);
     if (frame.empty()) return;
@@ -80,7 +80,7 @@ void YoloDetectorNode::image_callback(const sensor_msgs::msg::CompressedImage::S
 int main(int argc, char * argv[])
 {
   rclcpp::init(argc, argv);
-  rclcpp::spin(std::make_shared<YoloDetectorNode>());
+  rclcpp::spin(std::make_shared<YoloComparatorNode>());
   rclcpp::shutdown();
   return 0;
 }

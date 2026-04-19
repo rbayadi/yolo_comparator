@@ -15,10 +15,10 @@
 
 #include <chrono>
 
-class YoloDetectorNode : public rclcpp::Node
+class YoloComparatorNode : public rclcpp::Node
 {
 public:
-  YoloDetectorNode();
+  YoloComparatorNode();
 
 private:
   void image_callback(const sensor_msgs::msg::CompressedImage::SharedPtr msg);
